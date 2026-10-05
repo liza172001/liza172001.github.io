@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liza Hamadi | Web Developer</title>
+<meta name="description" content="Liza Hamadi, web developer in Ottawa. Projects, skills and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span aria-hidden="true">LH</span>Liza Hamadi</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ================= HERO ================= -->
+  <section class="wrap hero" id="top" aria-labelledby="hero-title">
+    <h1 id="hero-title">Liza Hamadi</h1>
+    <!-- EDIT: say it your way -->
+    <p class="lead">Web developer in Ottawa. I build clear, accessible web apps, and I've done it for real as a web development co-op at CMPA.</p>
+    <ul class="facts-row" aria-label="Quick facts">
+      <li><small>Studying</small>Web Development &amp; Internet Applications, Algonquin College</li>
+      <li><small>Experience</small>Web Development Student co-op, CMPA</li>
+      <li><small>Based in</small>Ottawa, Canada</li>
+    </ul>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="wrap section" id="work" aria-labelledby="work-title">
+    <div class="section-head">
+      <div>
+        <p class="label">Selected work</p>
+        <h2 class="big" id="work-title">Featured project</h2>
+      </div>
+      <p>Open the project to see the full story: the problem, my role, the wireframes and the result.</p>
+    </div>
+    <!-- Filled from PROJECTS in script.js -->
+    <div class="cards" id="projects"></div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="wrap section" id="about" aria-labelledby="about-title">
+    <div class="about">
+      <div>
+        <p class="label">About me</p>
+        <h2 class="big" id="about-title">Hi, I'm Liza.</h2>
+      </div>
+      <!-- EDIT: rewrite in your own voice -->
+      <div class="about-copy">
+        <p>I'm a web developer finishing the <strong>Web Development &amp; Internet Applications</strong> diploma at Algonquin College, graduating in December 2026.</p>
+        <p>From January to August 2026 I worked remotely as a <strong>Web Development Student co-op at CMPA</strong>, where I got to build for real users alongside a professional development team.</p>
+        <p>I care about clean, accessible interfaces and enjoy taking a project from rough wireframes all the way to a finished product.</p>
+        <p>I'm looking for a junior developer role where I can keep learning and ship work that matters. Outside of code, you'll find me playing <strong>volleyball</strong> or out <strong>hiking</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="wrap section" id="skills" aria-labelledby="skills-title">
+    <p class="label">Skills</p>
+    <h2 class="big" id="skills-title" style="margin-bottom:40px">What I work with</h2>
+    <!-- EDIT: keep only what you've really used -->
+    <div class="catalog">
+      <div class="group" style="--c:var(--violet)"><h3>Front end</h3><ul><li>HTML &amp; CSS</li><li>JavaScript</li><li>[Framework]</li><li>Accessibility</li></ul></div>
+      <div class="group" style="--c:var(--teal)"><h3>Back end</h3><ul><li>[Language]</li><li>REST APIs</li><li>SQL</li><li>[Database]</li></ul></div>
+      <div class="group" style="--c:var(--coral)"><h3>Tools</h3><ul><li>Git &amp; GitHub</li><li>VS Code</li><li>Figma</li></ul></div>
+      <div class="group" style="--c:var(--lilac)"><h3>People</h3><ul><li>Customer service</li><li>Remote teamwork</li><li>Clear communication</li></ul></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="wrap section contact" id="contact" aria-labelledby="contact-title">
+    <p class="label">Contact</p>
+    <h2 id="contact-title">Let's work together.</h2>
+    <p class="contact-lead">I'm looking for junior developer roles starting after December 2026. Email is the fastest way to reach me.</p>
+    <div class="mail">
+      <!-- EDIT: your email -->
+      <span class="addr" id="addr">your.email@example.com</span>
+      <button class="btn btn-main" id="copy" type="button">Copy email</button>
+    </div>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/liza-hamadi" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/liza172001" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Liza Hamadi</span><span>Hand-coded with HTML, CSS and JavaScript</span></div></footer>
+
+<dialog class="panel" id="panel" aria-labelledby="cs-title">
+  <div class="cs" id="cs">
+    <div class="cs-bar">
+      <button class="back" type="button" id="cs-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Back to portfolio</button>
+      <button class="icon-btn" type="button" id="cs-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div id="cs-content"></div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
