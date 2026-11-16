@@ -121,7 +121,7 @@ const PROJECTS = [
     ],
     tags: ["Laravel 12", "Livewire 3", "PHP", "Tailwind CSS", "Security", "2FA"],
     type: "Capstone project · Algonquin College, Winter 2026",
-    team: "4-person team",
+    team: "2-person team",
     platform: "Web app",
     links: { live: "", code: "" },   // EDIT: add the GitHub repo link if it's public
     purpose: "SaveUp is a personal budgeting app. You set a starting balance, log income and expenses by category, and create savings goals you can move money into and out of. The dashboard shows your current balance, progress on each goal and your recent activity.",
@@ -160,7 +160,7 @@ const PROJECTS = [
     cover: ["images/fitforg/welcome.jpg", "images/fitforg/home.jpg", "images/fitforg/exercises.jpg", "images/fitforg/calendar.jpg", "images/fitforg/profile.jpg"],
     tags: ["UI design", "Figma", "Wireframing", "Design system", "Mobile"],
     type: "Academic project",       // EDIT if it was personal
-    team: "Solo project",           // EDIT if it was a team
+    team: "2-person team",           // EDIT if it was a team
     platform: "Mobile app",
     links: { prototype: "", live: "", code: "" },   // EDIT: paste your Figma prototype link
     purpose: "FitForg helps people train with a plan made for them. New users pick their gender, age and weight, and the app uses that to suggest exercises at the right level (beginner, intermediate or expert). From there they can browse exercises, schedule workouts on a calendar and follow their progress.",
