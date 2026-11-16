@@ -7,6 +7,151 @@
    ===================================================================== */
 const PROJECTS = [
   {
+    id: "hamadidac",
+    title: "Hamadidac Admin Portal",
+    subtitle: "A hand-built PHP admin portal for a school science supplier",
+    summary: "An internal portal where staff keep a science-equipment catalogue up to date: categories, products, availability and customer accounts. PHP and MySQL with a hand-written MVC, no framework.",
+    cover: "images/hamadidac/landing.jpg",
+    screens: [
+      { src: "images/hamadidac/landing.jpg", caption: "Public homepage" },
+      { src: "images/hamadidac/home.jpg", caption: "Admin home" },
+      { src: "images/hamadidac/products.jpg", caption: "Products: filters and pagination" },
+      { src: "images/hamadidac/customers.jpg", caption: "Customer accounts" },
+      { src: "images/hamadidac/categories.jpg", caption: "Product categories" },
+      { src: "images/hamadidac/login.jpg", caption: "Sign in" }
+    ],
+    tags: ["PHP 8", "MySQL", "MVC", "PDO", "Security", "Responsive"],
+    type: "Course project · CST8268, Algonquin College",
+    team: "Project manager & developer",
+    platform: "Web app",
+    links: { live: "", code: "" },   // EDIT: add the GitHub repo link if it's public
+    purpose: "Hamadidac supplies scientific and teaching equipment to schools and laboratories in Algeria (Béjaïa). This portal is where staff sign in to keep the catalogue current. The scope, agreed with my professor, is administration only: no customer catalogue, orders or payments.",
+    challenge: "Building a secure, well-organized app without a framework: routing, sessions, roles, CSRF protection and file uploads all had to be written and understood from scratch.",
+    role: [
+      "Managed the project and built the app, from flow diagrams, mock-up and technical spec to the working demo",
+      "Wrote the MVC structure by hand: one entry point, a router, controllers, PDO models and views",
+      "Designed the 5-table MySQL database (roles, administrators, categories, products, customers)",
+      "Did a design pass: real company content on the public homepage, a denser admin home, responsive down to 390 px"
+    ],
+    stack: [
+      { layer: "Language", choice: "PHP 8, no framework" },
+      { layer: "Database", choice: "MySQL via PDO, real prepared statements" },
+      { layer: "Server", choice: "Apache on XAMPP, .htaccess sends every request to index.php" },
+      { layer: "Architecture", choice: "Hand-written MVC: Router → Auth → CSRF → controller → model → view" },
+      { layer: "Front end", choice: "HTML, CSS and vanilla JavaScript, IBM Plex type" }
+    ],
+    highlights: [
+      { title: "Role checked on every request", text: "The portal never trusts a role stored in the session. It reloads the account from the database on every admin route, so a deactivated account loses access immediately." },
+      { title: "Security built in", text: "30-minute idle timeout, session ID regenerated at login, a CSRF token on every POST compared in constant time, prepared statements everywhere and server-side validation." },
+      { title: "Safe image uploads", text: "Uploaded files are opened and checked for their real type, not their extension, and capped at 2 MB." },
+      { title: "Accessible and responsive", text: "Works down to 390 px wide, with visible keyboard focus and reduced motion respected." }
+    ],
+    tools: ["PHP", "MySQL", "PDO", "Apache", "XAMPP", "phpMyAdmin", "JavaScript", "Git"],
+    skills: ["MVC architecture", "Web security", "Database design", "Project management", "Accessibility"],
+    outcome: [
+      "A complete admin portal: sign in with roles, home dashboard, categories, products with image upload, and customer accounts",
+      "A real understanding of what frameworks do for you, from routing and sessions to CSRF, because I built each piece myself"
+    ]
+  },
+  {
+    id: "northbridge",
+    title: "NorthBridge",
+    subtitle: "A full-stack website for an influencer marketing agency",
+    summary: "A Next.js platform that connects brands with vetted creators: brand and creator applications, a creator directory, services, case studies and a blog, backed by a database, auth and email.",
+    cover: "images/northbridge/home.jpg",
+    screens: [
+      { src: "images/northbridge/home.jpg", caption: "Home: hero with sample creator cards" },
+      { src: "images/northbridge/what-we-do.jpg", caption: "What we do" },
+      { src: "images/northbridge/creators.jpg", caption: "Creator network" },
+      { src: "images/northbridge/campaigns.jpg", caption: "Case studies" },
+      { src: "images/northbridge/for-influencers.jpg", caption: "For influencers" },
+      { src: "images/northbridge/book-a-call.jpg", caption: "Book a call form" }
+    ],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Framer Motion"],
+    type: "Personal project · In progress",
+    team: "Solo project",
+    platform: "Web app",
+    links: { live: "https://northbridgeagency.ca/", liveLabel: "Visit site (in progress)", code: "" },
+    purpose: "NorthBridge is an influencer marketing agency that matches brands with vetted creators, runs campaigns end to end and reports the results. The site has to speak to two audiences at once: brands looking for creators, and creators looking for fair, consistent brand deals.",
+    challenge: "Building one site that works as a marketing website and as a real application, with forms that save to a database, send emails and sit behind secure, role-based access, while still feeling fast and polished.",
+    role: [
+      "Designed and built the whole site myself, front end and back end",
+      "Created a custom navy and electric-blue design system in Tailwind CSS",
+      "Built the brand and creator application flows with validation shared between client and server",
+      "Set up the database, authentication with roles, transactional email and deployment"
+    ],
+    stack: [
+      { layer: "Framework", choice: "Next.js 14 (App Router, React 18, TypeScript)" },
+      { layer: "Styling", choice: "Tailwind CSS with a custom navy / electric-blue design system" },
+      { layer: "Animation", choice: "Framer Motion (respects reduced-motion settings)" },
+      { layer: "Database", choice: "PostgreSQL via Prisma (Supabase-compatible)" },
+      { layer: "Auth", choice: "Custom JWT sessions (jose) + bcryptjs, role-based access" },
+      { layer: "Email", choice: "Resend, with a console fallback in development" },
+      { layer: "Validation", choice: "Zod, one schema shared by client and server" },
+      { layer: "Files", choice: "Private local storage (Supabase Storage in production)" },
+      { layer: "Deploy", choice: "Vercel + managed Postgres" }
+    ],
+    highlights: [
+      { title: "One schema, two sides", text: "Zod schemas are shared by the forms and the API, so the same rules check data in the browser and on the server, with no duplicated validation." },
+      { title: "Auth built from scratch", text: "Sessions are signed JWTs (jose) with bcrypt-hashed passwords and role-based access, instead of an off-the-shelf auth service." },
+      { title: "Motion that respects users", text: "Framer Motion animations switch off automatically for people who prefer reduced motion." },
+      { title: "Works locally and in production", text: "Email falls back to the console and files to local storage in development, so the app runs anywhere without extra setup." }
+    ],
+    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Zod", "Resend", "Vercel"],
+    skills: ["Full-stack development", "Authentication & security", "Database design", "Design systems", "Accessibility"],
+    outcome: [
+      "A real site, built for a real agency, that I designed, built and deployed on my own",
+      "Hands-on experience with the full stack: UI, API routes, database, auth, email and deployment",
+      "Still growing: I'm continuing to add features and polish"
+    ]
+  },
+  {
+    id: "saveup",
+    title: "SaveUp",
+    subtitle: "A personal budgeting app built with security first",
+    summary: "A Laravel + Livewire budgeting app: log income and expenses, create savings goals and track progress, behind email two-factor login.",
+    cover: "images/saveup/dashboard.jpg",
+    screens: [
+      { src: "images/saveup/dashboard.jpg", caption: "Dashboard" },
+      { src: "images/saveup/transactions.jpg", caption: "Transactions" },
+      { src: "images/saveup/goals.jpg", caption: "Savings goals" },
+      { src: "images/saveup/goal-detail.jpg", caption: "Goal detail and history" },
+      { src: "images/saveup/add-transaction.jpg", caption: "Add a transaction" },
+      { src: "images/saveup/login.jpg", caption: "Login" }
+    ],
+    tags: ["Laravel 12", "Livewire 3", "PHP", "Tailwind CSS", "Security", "2FA"],
+    type: "Capstone project · Algonquin College, Winter 2026",
+    team: "4-person team",
+    platform: "Web app",
+    links: { live: "", code: "" },   // EDIT: add the GitHub repo link if it's public
+    purpose: "SaveUp is a personal budgeting app. You set a starting balance, log income and expenses by category, and create savings goals you can move money into and out of. The dashboard shows your current balance, progress on each goal and your recent activity.",
+    challenge: "The capstone theme was security, so it couldn't be an afterthought. A money app also has to keep balances correct, even when two requests try to change the same account at the same time.",
+    role: [
+      "[EDIT: the parts you built yourself, e.g. the email login code, the goals feature, the dashboard UI]",
+      "Worked in a four-person team with Git, splitting features and reviewing each other's code",
+      "Built pages as Livewire components: a PHP class plus a Blade view, no separate JavaScript framework"
+    ],
+    stack: [
+      { layer: "Framework", choice: "Laravel 12 + Livewire 3 on PHP 8.2+" },
+      { layer: "Views", choice: "Blade + Tailwind CSS, built with Vite" },
+      { layer: "Auth", choice: "Laravel Fortify + custom email one-time code (2FA)" },
+      { layer: "Database", choice: "Eloquent ORM, SQLite in development" },
+      { layer: "Interactivity", choice: "Livewire server-side components, no separate API" }
+    ],
+    highlights: [
+      { title: "Email two-factor login", text: "After a correct password, the app emails a 6-digit code that expires after 10 minutes. The code is stored bcrypt-hashed, never in plain text, and a custom middleware blocks every page until it's verified. Logins are limited to 5 attempts per minute per email and IP." },
+      { title: "Safe money moves on goals", text: "Adding to or taking from a goal runs inside a database transaction with row locks on both the user and the goal. The balance is checked inside the lock, deposits are capped at what's left, and every move writes an audit record." },
+      { title: "Simple architecture", text: "No separate API or front-end framework: Livewire handles interactivity on the server, which keeps each page small and easy to follow." }
+    ],
+    tools: ["Laravel", "Livewire", "PHP", "Blade", "Tailwind CSS", "Vite", "Fortify", "SQLite", "Git"],
+    skills: ["Secure authentication", "Database transactions", "Concurrency", "Team collaboration", "MVC"],
+    outcome: [
+      "A working budgeting app with secure login, goals and a full transaction history",
+      "Learned to treat security and data correctness as design requirements, not extras",
+      "What I'd improve next: give regular transactions the same locking and ownership checks that goals already have, and run on PostgreSQL or MySQL so the row locks actually apply (SQLite ignores them)"
+    ]
+  },
+  {
     id: "fitforg",
     title: "FitForg",
     subtitle: "A fitness app that builds workouts around you",
@@ -121,6 +266,7 @@ const coverHTML = p => {
 /* ---------- Project cards ---------- */
 const grid = document.getElementById("projects");
 grid.classList.toggle("solo", PROJECTS.length === 1);
+grid.classList.toggle("duo", PROJECTS.length > 1 && PROJECTS.length % 2 === 0);
 PROJECTS.forEach((p, i) => {
   const shown = (p.tags || []).slice(0, 3), extra = (p.tags || []).length - shown.length;
   const card = document.createElement("article");
@@ -159,9 +305,9 @@ function openProject(i, from) {
   cs.style.setProperty("--c", COLORS[i % COLORS.length]);
 
   const linkBtns = [
-    L.prototype && `<a class="linkbtn" href="${esc(L.prototype)}">${icon.proto}View prototype</a>`,
-    L.live && `<a class="linkbtn" href="${esc(L.live)}">${icon.live}Live demo</a>`,
-    L.code && `<a class="linkbtn" href="${esc(L.code)}">${icon.code}View code</a>`
+    L.prototype && `<a class="linkbtn" href="${esc(L.prototype)}" target="_blank" rel="noopener">${icon.proto}View prototype</a>`,
+    L.live && `<a class="linkbtn" href="${esc(L.live)}" target="_blank" rel="noopener">${icon.live}${esc(L.liveLabel || "Live demo")}</a>`,
+    L.code && `<a class="linkbtn" href="${esc(L.code)}" target="_blank" rel="noopener">${icon.code}View code</a>`
   ].filter(Boolean);
 
   out.innerHTML = `
@@ -188,6 +334,7 @@ function openProject(i, from) {
       }).join("")}</div>`) : ""}
       ${has(p.keyScreens) ? box(icon.screens, p.keyScreensTitle || "Key screens", `<div class="phone-grid">${p.keyScreens.map(s => `<figure><a href="${esc(s.src)}" target="_blank" rel="noopener">${img(s.src, s.caption, "Add a screen")}</a>${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ""}</figure>`).join("")}</div>`) : ""}
       ${p.styleGuide && has(p.styleGuide.images) ? box(icon.palette, "Style guide", `${p.styleGuide.text ? `<p class="wf-intro">${esc(p.styleGuide.text)}</p>` : ""}<div class="guide-grid">${p.styleGuide.images.map(s => `<figure><a href="${esc(s.src)}" target="_blank" rel="noopener">${img(s.src, s.caption, "")}</a>${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ""}</figure>`).join("")}</div>`) : ""}
+      ${has(p.stack) ? box(icon.tool, "Tech stack", `<dl class="stack-table">${p.stack.map(r => `<div><dt>${esc(r.layer)}</dt><dd>${esc(r.choice)}</dd></div>`).join("")}</dl>`) : ""}
       ${(has(p.tools) || has(p.skills)) ? `<div class="two">
         ${has(p.tools) ? box(icon.tool, "Tools used", chips(p.tools, "stack accent")) : ""}
         ${has(p.skills) ? box(icon.star, "Skills demonstrated", chips(p.skills)) : ""}

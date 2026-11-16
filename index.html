@@ -7,7 +7,7 @@
 <meta name="description" content="Liza Hamadi, web developer in Ottawa. Projects, skills and contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,14 +30,10 @@
 <main id="main">
   <!-- ================= HERO ================= -->
   <section class="wrap hero" id="top" aria-labelledby="hero-title">
-    <h1 id="hero-title">Liza Hamadi</h1>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <p class="hero-kicker">Web developer</p>
     <!-- EDIT: say it your way -->
-    <p class="lead">Web developer in Ottawa. I build clear, accessible web apps, and I've done it for real as a web development co-op at CMPA.</p>
-    <ul class="facts-row" aria-label="Quick facts">
-      <li><small>Studying</small>Web Development &amp; Internet Applications, Algonquin College</li>
-      <li><small>Experience</small>Web Development Student co-op, CMPA</li>
-      <li><small>Based in</small>Ottawa, Canada</li>
-    </ul>
+    <h1 id="hero-title">I build clean, secure web apps<br><span>from design to database.</span></h1>
   </section>
 
   <!-- ================= PROJECTS ================= -->
@@ -45,9 +41,9 @@
     <div class="section-head">
       <div>
         <p class="label">Selected work</p>
-        <h2 class="big" id="work-title">Featured project</h2>
+        <h2 class="big" id="work-title">Projects</h2>
       </div>
-      <p>Open the project to see the full story: the problem, my role, the wireframes and the result.</p>
+      <p>Open a project to see the full story: the problem, my role, how I built it and the result.</p>
     </div>
     <!-- Filled from PROJECTS in script.js -->
     <div class="cards" id="projects"></div>
@@ -76,8 +72,8 @@
     <h2 class="big" id="skills-title" style="margin-bottom:40px">What I work with</h2>
     <!-- EDIT: keep only what you've really used -->
     <div class="catalog">
-      <div class="group" style="--c:var(--violet)"><h3>Front end</h3><ul><li>HTML &amp; CSS</li><li>JavaScript</li><li>[Framework]</li><li>Accessibility</li></ul></div>
-      <div class="group" style="--c:var(--teal)"><h3>Back end</h3><ul><li>[Language]</li><li>REST APIs</li><li>SQL</li><li>[Database]</li></ul></div>
+      <div class="group" style="--c:var(--violet)"><h3>Front end</h3><ul><li>HTML &amp; CSS</li><li>JavaScript</li><li>React &amp; Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Accessibility</li></ul></div>
+      <div class="group" style="--c:var(--teal)"><h3>Back end</h3><ul><li>Node.js</li><li>PHP &amp; Laravel</li><li>MySQL</li><li>REST APIs</li><li>PostgreSQL &amp; Prisma</li><li>Auth (JWT)</li></ul></div>
       <div class="group" style="--c:var(--coral)"><h3>Tools</h3><ul><li>Git &amp; GitHub</li><li>VS Code</li><li>Figma</li></ul></div>
       <div class="group" style="--c:var(--lilac)"><h3>People</h3><ul><li>Customer service</li><li>Remote teamwork</li><li>Clear communication</li></ul></div>
     </div>
